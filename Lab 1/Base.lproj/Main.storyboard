@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9W-A9-UcF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9W-A9-UcF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,12 +116,40 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4I-i0-7OD">
-                                <rect key="frame" x="113" y="567" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4I-i0-7OD">
+                                <rect key="frame" x="96" y="567" width="51" height="31"/>
                                 <connections>
                                     <action selector="watchedSwitchToggledWithSender:" destination="uOw-hz-JBO" eventType="valueChanged" id="cep-mg-FzY"/>
                                 </connections>
                             </switch>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZMJ-Su-oe1">
+                                <rect key="frame" x="216" y="655" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="watchCountStepperChanged:" destination="uOw-hz-JBO" eventType="valueChanged" id="zom-bw-57d"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watched: 1 time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22V-t3-MFO">
+                                <rect key="frame" x="16" y="666" width="181" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br9-Mt-d7m">
+                                <rect key="frame" x="16" y="736" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ywj-Vs-OTn">
+                                <rect key="frame" x="163" y="736" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ratingSliderChanged:" destination="uOw-hz-JBO" eventType="valueChanged" id="jXi-lb-lEM"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z5U-TO-C5a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,7 +178,11 @@
                         <outlet property="favoriteButton" destination="2hK-uP-isB" id="1bo-fM-PNF"/>
                         <outlet property="genreLabel" destination="UN2-UF-MIv" id="MEV-de-T6Z"/>
                         <outlet property="movieImageView" destination="B3f-SQ-yov" id="CVD-nd-WQT"/>
+                        <outlet property="ratingLabel" destination="Br9-Mt-d7m" id="59h-0X-4PJ"/>
+                        <outlet property="ratingSlider" destination="ywj-Vs-OTn" id="j81-MQ-scF"/>
                         <outlet property="titleLabel" destination="VUw-Kv-s6N" id="JUP-jk-RSV"/>
+                        <outlet property="watchCountLabel" destination="22V-t3-MFO" id="Nn1-Cd-6af"/>
+                        <outlet property="watchCountStepper" destination="ZMJ-Su-oe1" id="Wo7-RK-Zye"/>
                         <outlet property="watchedSwitch" destination="N4I-i0-7OD" id="MQk-zq-UYU"/>
                     </connections>
                 </viewController>
